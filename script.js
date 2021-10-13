@@ -1,15 +1,60 @@
 // Olivia's JS for getting a random character
 document.getElementById("random-character-button").addEventListener("click", function(event) {
-  console.log("Clicked!");
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return '';
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
 
   const url = "http://hp-api.herokuapp.com/api/characters";
-  console.log(url);
+  var htmlString = "";
   fetch(url)
     .then(function(response) {
       return response.json();
     }).then(function(json) {
-      console.log(json);
-      console.log(json.length);
-    //  document.getElementById("testing-button").innerHTML = "modified document";
+      let randPerson = json[getRandomInt(113)];
+      htmlString +=("<h1>"+randPerson.name+"</h1>");
+
+      if (randPerson.image) {
+        htmlString += ("<img src='" + randPerson.image +  "' width='200'>");
+      }
+
+      htmlString += ("<p>" + capitalize(randPerson.gender));
+      if (randPerson.species !== "human") {
+        htmlString += (" " + randPerson.species);
+      } else if (randPerson.hogwartsStudent) {
+        htmlString += " Hogwarts Student</p>";
+      } else if (randPerson.hogwartsStaff) {
+        htmlString += " Hogwarts Staff</p>";
+      } else if (randPerson.wizard) {
+        htmlString += " Wizard</p>";
+      } else if (randPerson.ancestry === "squib") {
+        htmlString += " Squib</p>";
+      }
+
+      htmlString += ("<p>" + randPerson.house + "</p>");
+      if (randPerson.wand.length) {
+        let wand = "";
+        wand += ("<p>" + randPerson.wand.length + " inch " + randPerson.wand.wood
+                + " wand with a " + randPerson.wand.core + " core</p>");
+        htmlString += wand;
+      }
+      if (randPerson.patronus) {
+        htmlString += ("<p>Patronus: " + randPerson.patronus + "</p>");
+      }
+      if (randPerson.dateOfBirth) {
+        htmlString += ("<p>Birthday: " + randPerson.dateOfBirth + "</p>");
+      }
+      if (randPerson.actor) {
+        htmlString += ("<p>Played by " + randPerson.actor);
+      }
+
+
+
+      document.getElementById("button-testing").innerHTML = htmlString;
       });
 });
