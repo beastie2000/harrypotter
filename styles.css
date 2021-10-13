@@ -53,6 +53,17 @@ h1 {
   padding-bottom: 2.5rem;
 }
 
+.rand-character {
+  align-items: center;
+  display: block;
+  justify-content: center;
+  text-align: center;
+}
+
+#button-testing {
+  margin: 20px;
+}
+
 #footer {
   position: absolute;
   bottom: 0;
