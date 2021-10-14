@@ -17,7 +17,24 @@ document.getElementById("random-character-button").addEventListener("click", fun
       return response.json();
     }).then(function(json) {
       let randPerson = json[getRandomInt(113)];
-      htmlString +=("<h1>"+randPerson.name+"</h1>");
+
+
+      // <h1> element is different based on house
+      htmlString += "<h1 ";
+      if (randPerson.house === "Slytherin") {
+        htmlString += "id='slyth'";
+      } else if (randPerson.house === "Hufflepuff") {
+        htmlString += "id='huffl'";
+      } else if (randPerson.house === "Ravenclaw") {
+        htmlString += "id='raven'";
+      } else if (randPerson.house === "Gryffindor") {
+        htmlString += "id='gryff'";
+      }
+
+
+      htmlString += (">" + randPerson.name + "</h1>");
+
+  //    htmlString +=("<h1>"+randPerson.name+"</h1>");
 
       if (randPerson.image) {
         htmlString += ("<img src='" + randPerson.image +  "' width='200'>");
@@ -55,6 +72,6 @@ document.getElementById("random-character-button").addEventListener("click", fun
 
 
 
-      document.getElementById("button-testing").innerHTML = htmlString;
+      document.getElementById("character-info").innerHTML = htmlString;
       });
 });

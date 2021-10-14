@@ -46,22 +46,49 @@ h1 {
 
 #page-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 110vh;
 }
 
 #content-wrap {
   padding-bottom: 2.5rem;
 }
 
+#slyth {
+  color: rgb(0,75,0);
+}
+
+#gryff {
+  color: rgb(152,17,17);
+}
+
+#huffl {
+  color: Goldenrod;
+}
+
+#raven {
+  color: rgb(35,45,138);
+}
+
+#random-character-button {
+  font-size: 18px;
+  background-color: rgb(40,40,40);
+  color: Gold;
+  padding: 8px;
+}
+
 .rand-character {
+  border: 1px solid red;
+  margin: 25px 0 0 0;
   align-items: center;
   display: block;
   justify-content: center;
   text-align: center;
+  height: 100%;
 }
 
-#button-testing {
+#character-info {
   margin: 20px;
+  border: 1px solid green;
 }
 
 #footer {
