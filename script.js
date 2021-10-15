@@ -1,4 +1,5 @@
 // Olivia's JS for getting a random character
+console.log(document.getElementById("random-character-button"));
 document.getElementById("random-character-button").addEventListener("click", function(event) {
 
   function getRandomInt(max) {
@@ -75,3 +76,5 @@ document.getElementById("random-character-button").addEventListener("click", fun
       document.getElementById("character-info").innerHTML = htmlString;
       });
 });
+
+
