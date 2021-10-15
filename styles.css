@@ -69,6 +69,33 @@ h1 {
   color: rgb(35,45,138);
 }
 
+/* House Picker styles */
+
+#houseSubmit {
+  font-size: 18px;
+  background-color: rgb(230,230,230);
+  color: Gray;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid Silver;
+}
+
+#houseResults {
+  margin: 30px;
+}
+
+#listofcharacters {
+  margin: 25px 0 0 0;
+  align-items: center;
+  display: inline-grid;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+
+/* Random Character Picker styles */
+
 #random-character-button {
   font-size: 18px;
   background-color: rgb(230,230,230);
@@ -90,6 +117,10 @@ h1 {
 #character-info {
   margin: 30px;
 }
+
+
+
+/* Footer styles */
 
 #footer {
   position: absolute;
