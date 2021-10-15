@@ -1,4 +1,5 @@
 // Olivia's JS for getting a random character
+console.log(document.getElementById("random-character-button"));
 document.getElementById("random-character-button").addEventListener("click", function(event) {
   console.log("Clicked!");
 
@@ -13,3 +14,5 @@ document.getElementById("random-character-button").addEventListener("click", fun
     //  document.getElementById("testing-button").innerHTML = "modified document";
       });
 });
+
+
