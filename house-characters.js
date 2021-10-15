@@ -21,7 +21,7 @@ document.getElementById("houseSubmit").addEventListener("click", function(event)
           console.log(json);
           let results = "";
           for (let i = 0; i < json.length; i++) {
-              results += "<h1 ";
+              results += "<div id='profile'> <div id='nameandpic'> <h1 ";
               if (json[i].house === "Slytherin") {
                 results += "id='slyth'";
               } else if (json[i].house === "Ravenclaw") {
@@ -32,27 +32,28 @@ document.getElementById("houseSubmit").addEventListener("click", function(event)
                 results += "id='huffl'";
               } 
               results += ">" + json[i].name + "</h1>";
-              results += "<img src='" + json[i].image + "' width='200'>";
+              results += "<img src='" + json[i].image + "' width='200'> </div><br>";
+              results += "<div id='information'";
               if (json[i].species !== "human") {
-                results += "<p>" + json[i].species + "</p>";
+                results += "<p>" + json[i].species + "</p><br>";
               }
               else if (json[i].hogwartsStudent) {
-                results += "<p>" + json[i].gender + " Hogwarts Student</p>";
+                results += "<p>" + json[i].gender + " Hogwarts Student</p><br>";
               }
               else if (json[i].hogwartsStaff) {
-                results += "<p>" + json[i].gender + " Hogwarts Staff</p>"
+                results += "<p>" + json[i].gender + " Hogwarts Staff</p><br>"
               }
               else if (json[i].wizard) {
-                results += "<p>" + json[i].gender + " Wizard</p>";
+                results += "<p>" + json[i].gender + " Wizard</p><br>";
               }
               else if (json[i].ancestry === "squib") {
-                results += "<p>" + json[i].gender + " Squib</p>";
+                results += "<p>" + json[i].gender + " Squib</p><br>";
               }
 
-              results += "<p>" + json[i].wand.length + " inch " + json[i].wand.wood + " wand with a " + json[i].wand.core + " core</p>";
-              results += "<p>Patronus: " + json[i].patronus + "</p>";
-              results += "<p>Birthday: " + json[i].dateOfBirth + "</p>";
-              results += "<p>Played by " + json[i].actor + "</p>";
+              results += "<p>" + json[i].wand.length + " inch " + json[i].wand.wood + " wand with a " + json[i].wand.core + " core</p><br>";
+              results += "<p>Patronus: " + json[i].patronus + "<br></p>";
+              results += "<p>Birthday: " + json[i].dateOfBirth + "</p><br>";
+              results += "<p>Played by " + json[i].actor + "</p></div></div>";
           }
           results += "</p>";
           document.getElementById("houseResults").innerHTML = results;

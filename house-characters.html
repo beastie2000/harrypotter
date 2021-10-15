@@ -15,7 +15,7 @@
   </head>
 
   <body>
-    <div id='page-container'>
+    <div id='characterpage-container'>
       <div id='content-wrap'>
         <div id='header-box'>
           <h1>Title Here</h1>
@@ -27,14 +27,14 @@
         </div>
 
 
-        <div class='listofcharacters'>
+        <div id="input">
           <form>
-            <label>Enter a Hogwarts house</label>
+            <label>ENTER A HOGWARTS HOUSE: </label>
             <input id="houseInput" type="text"></input>
             <input id="houseSubmit" type="submit" value="Submit"></input>
           </form>
-          <div id="houseResults"> House Results</div>
         </div>
+        <div id="houseResults"></div>
 
 
       </div> <!-- closes content-wrap-->
@@ -44,9 +44,9 @@
         <a href="https://hp-api.herokuapp.com/"
            target="_blank">SOURCE API</a>
       </footer>
-
-      <script text="type/javascript" src="/house-characters.js"></script>
-
     </div> <!-- closes page-container -->
+
+    <script text="type/javascript" src="/house-characters.js"></script>
+
   </body>
 </html>

@@ -50,7 +50,7 @@ h1 {
 }
 
 #content-wrap {
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
 }
 
 #slyth {
@@ -81,16 +81,63 @@ h1 {
 }
 
 #houseResults {
-  margin: 30px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+  border-color: red;
+  border-width: 10px;
+  border-style: dashed;
 }
 
-#listofcharacters {
-  margin: 25px 0 0 0;
-  align-items: center;
-  display: inline-grid;
-  justify-content: center;
+#profile {
+  border-color: rgb(255, 238, 0);
+  border-width: 10px;
+  border-style: dashed;
+  display: flex;
+  width: 40%;
+}
+
+#nameandpic {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 20px;
+  padding: 10px;
+
+  border-color: rgb(123, 108, 207);
+  border-width: 10px;
+  border-style: dashed;
+}
+
+#information {
+  overflow-wrap: normal;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  margin: 20px;
+  padding: 10px;
+
+
+  border-color: rgb(0, 255, 21);
+  border-width: 10px;
+  border-style: dashed;
+}
+
+#input {
+  font-size: 25px;
+  color: rgb(68, 68, 68);
   text-align: center;
-  height: 100%;
+  align-items: center;
+  display: block;
+  margin-top: 10px;
+}
+
+#characterpage-container {
+  position: relative;
+  min-height: 110vh;
 }
 
 
