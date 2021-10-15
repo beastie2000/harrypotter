@@ -31,31 +31,57 @@ document.getElementById("houseSubmit").addEventListener("click", function(event)
               } else if (json[i].house === "Hufflepuff") {
                 results += "id='huffl'";
               } 
-              results += ">" + json[i].name + "</h1>";
+              results += ">" + json[i].name + "<hr></h1>";
               results += "<img src='" + json[i].image + "' width='200'> </div><br>";
               results += "<div id='information'";
               if (json[i].species !== "human") {
-                results += "<p>" + json[i].species + "</p><br>";
+                results += "<p>" + json[i].species + "<br><br>";
               }
               else if (json[i].hogwartsStudent) {
-                results += "<p>" + json[i].gender + " Hogwarts Student</p><br>";
+                if (json[i].gender === "male") {
+                  results += "<p>Male ";
+                }
+                if (json[i].gender === "female") {
+                  results += "<p>Female ";
+                }
+                results += " Hogwarts Student<br><br>";
               }
               else if (json[i].hogwartsStaff) {
-                results += "<p>" + json[i].gender + " Hogwarts Staff</p><br>"
+                if (json[i].gender === "male") {
+                  results += "<p>Male ";
+                }
+                if (json[i].gender === "female") {
+                  results += "<p>Female ";
+                }
+                results += " Hogwarts Staff<br><br>"
               }
               else if (json[i].wizard) {
-                results += "<p>" + json[i].gender + " Wizard</p><br>";
+                if (json[i].gender === "male") {
+                  results += "<p>Male ";
+                }
+                if (json[i].gender === "female") {
+                  results += "<p>Female ";
+                }
+                results += " Wizard<br>";
               }
               else if (json[i].ancestry === "squib") {
-                results += "<p>" + json[i].gender + " Squib</p><br>";
+                results += "<p>" + json[i].gender + " Squib<br><br>";
               }
-
-              results += "<p>" + json[i].wand.length + " inch " + json[i].wand.wood + " wand with a " + json[i].wand.core + " core</p><br>";
-              results += "<p>Patronus: " + json[i].patronus + "<br></p>";
-              results += "<p>Birthday: " + json[i].dateOfBirth + "</p><br>";
-              results += "<p>Played by " + json[i].actor + "</p></div></div>";
+              if (json[i].wand.length !== "") {
+                results += "Wand: " + json[i].wand.length + " inch " + json[i].wand.wood + " wand with a " + json[i].wand.core + " core<br><br>";
+              }
+              if (json[i].patronus !== "") {
+                results += "Patronus: " + json[i].patronus + "<br><br>";
+              }
+              if (json[i].dateOfBirth !== "") {
+                results += "Birthday: " + json[i].dateOfBirth + "<br><br>";
+              }
+              if (json[i].actor !== "") {
+                results += "Played by " + json[i].actor;
+              }
+              results += "</p></div></div>";
           }
-          results += "</p>";
+          //results += "</p>";
           document.getElementById("houseResults").innerHTML = results;
         });
   
